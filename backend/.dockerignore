@@ -1,0 +1,7 @@
+__pycache__
+*.pyc
+.venv
+.env
+hype_tracker.db
+tests
+hype_fundamentals_tracker.egg-info
