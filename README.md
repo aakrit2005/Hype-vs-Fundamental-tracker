@@ -15,7 +15,7 @@ distance means anything.
 ---
 
 ## Table of Contents
-
+- [Quick Start](#quick-start)
 - [The Signal](#the-signal)
 - [Validation Methodology](#validation-methodology)
 - [Features](#features)
@@ -33,6 +33,26 @@ distance means anything.
 - [Judging Whether the Signal Is Real](#judging-whether-the-signal-is-real)
 
 ---
+
+## Quick Start
+
+One command runs the daily pipeline (prices → scores → backtest) and starts
+both servers. The pipeline stage runs at most once per day.
+
+    ./run.sh     # Linux / macOS
+    run.cmd      # Windows
+
+| Mode | Linux | Windows |
+|---|---|---|
+| Pipeline + servers (default) | `./run.sh` | `run.cmd` |
+| Pipeline only | `./run.sh pipeline` | `run.cmd pipeline` |
+| Servers only | `./run.sh servers` | `run.cmd servers` |
+
+First run auto-creates the virtualenv and frontend dependencies. The only
+prerequisite is `backend/.env` with `SERPAPI_KEY` and `JWT_SECRET`, plus
+Python 3.10+ and Node 20+ on PATH.
+
+Then open http://localhost:5173 (UI) and http://127.0.0.1:8000/docs (API).
 
 ## The Signal
 
